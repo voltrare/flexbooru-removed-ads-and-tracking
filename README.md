@@ -17,9 +17,6 @@ Click the icon below to translate this app.
 
 [![Crowdin](https://badges.crowdin.net/flexbooru/localized.svg)](https://crowdin.com/project/flexbooru)
 
-## Downlad
-<a href="https://play.google.com/store/apps/details?id=onlymash.flexbooru.play"><img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height="48"></a>
-
 ## Screenshot
 <img src="art/screenshot.webp" height="300" hspace="20">
 
