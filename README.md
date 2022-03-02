@@ -1,5 +1,5 @@
 # Fork intent
-This fork aims to remove all google ads/firebase trackers and unlock features.
+This fork aims to remove all google ads/firebase trackers and unlocks features.
 
 Currently there is a bug that seems to crash the app when saving tags but choosing -wait- on a pop up that appears a few seconds after lets you keep browsing.
 
