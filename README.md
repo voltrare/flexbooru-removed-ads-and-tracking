@@ -1,3 +1,8 @@
+# Fork intent
+This fork aims to remove all google ads/firebase trackers and unlocks features.
+
+Currently there is a bug that seems to crash the app when saving tags but choosing -wait- on a pop up that appears a few seconds after lets you keep browsing.
+
 # Flexbooru
 A booru client for Android, support [Danbooru](https://github.com/r888888888/danbooru), [Moebooru](https://github.com/moebooru/moebooru), Gelbooru, Shimmie, etc.
 
@@ -16,9 +21,6 @@ A booru client for Android, support [Danbooru](https://github.com/r888888888/dan
 Click the icon below to translate this app.
 
 [![Crowdin](https://badges.crowdin.net/flexbooru/localized.svg)](https://crowdin.com/project/flexbooru)
-
-## Downlad
-<a href="https://play.google.com/store/apps/details?id=onlymash.flexbooru.play"><img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height="48"></a>
 
 ## Screenshot
 <img src="art/screenshot.webp" height="300" hspace="20">
