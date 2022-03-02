@@ -23,7 +23,7 @@ import android.os.Build
 import android.os.Bundle
 import android.provider.DocumentsContract
 import android.view.*
-import android.widget.LinearLayout
+//import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.annotation.IntRange
 import androidx.appcompat.app.AlertDialog
@@ -37,9 +37,9 @@ import androidx.lifecycle.lifecycleScope
 import androidx.paging.LoadState
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.exoplayer2.ui.PlayerView
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdSize
-import com.google.android.gms.ads.AdView
+//import com.google.android.gms.ads.AdRequest
+//import com.google.android.gms.ads.AdSize
+//import com.google.android.gms.ads.AdView
 
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.collectLatest
@@ -48,7 +48,7 @@ import kotlinx.coroutines.sync.withLock
 import onlymash.flexbooru.R
 import onlymash.flexbooru.app.Keys.POST_POSITION
 import onlymash.flexbooru.app.Keys.POST_QUERY
-import onlymash.flexbooru.app.Settings
+//import onlymash.flexbooru.app.Settings
 import onlymash.flexbooru.app.Settings.POST_SIZE_LARGER
 import onlymash.flexbooru.app.Settings.POST_SIZE_SAMPLE
 import onlymash.flexbooru.app.Settings.activatedBooruUid
@@ -334,22 +334,22 @@ class DetailActivity : PathActivity(),
         favButton.setOnClickListener {
             vote()
         }
-        if (!Settings.isOrderSuccess) {
-            val adView = AdView(this)
-            binding.bottomShortcut.bottomBarContainer.addView(adView, 0, LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT).apply {
-                gravity = Gravity.CENTER_HORIZONTAL
-            })
-            var adWidth = getScreenWidthDp()
-            if (adWidth > 500) {
-                adWidth = 500
-            }
-            adView.apply {
-                visibility = View.VISIBLE
-                adSize = AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(this@DetailActivity, adWidth)
-                adUnitId = "ca-app-pub-1547571472841615/1729907816"
-                loadAd(AdRequest.Builder().build())
-            }
-        }
+//        if (!Settings.isOrderSuccess) {
+//            val adView = AdView(this)
+//            binding.bottomShortcut.bottomBarContainer.addView(adView, 0, LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT).apply {
+//                gravity = Gravity.CENTER_HORIZONTAL
+//            })
+//            var adWidth = getScreenWidthDp()
+//            if (adWidth > 500) {
+//                adWidth = 500
+//            }
+//            adView.apply {
+//                visibility = View.VISIBLE
+//                adSize = AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(this@DetailActivity, adWidth)
+//                adUnitId = "ca-app-pub-1547571472841615/1729907816"
+//                loadAd(AdRequest.Builder().build())
+//            }
+//        }
     }
 
     private fun createInfoDialog() {
