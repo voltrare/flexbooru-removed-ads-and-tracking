@@ -1,3 +1,8 @@
+# Fork intent
+This fork aims at removeing all google ads/firebase trackers and unlock features.
+
+Currently there is a bug that seems to crash the app when saving tags but choosing -wait- on a pop up that appears a few seconds after lets you keep browsing.
+
 # Flexbooru
 A booru client for Android, support [Danbooru](https://github.com/r888888888/danbooru), [Moebooru](https://github.com/moebooru/moebooru), Gelbooru, Shimmie, etc.
 
