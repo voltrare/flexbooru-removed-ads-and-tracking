@@ -66,7 +66,7 @@ import onlymash.flexbooru.app.Settings.latestVersionName
 import onlymash.flexbooru.app.Settings.latestVersionUrl
 import onlymash.flexbooru.app.Values.BOORU_TYPE_DAN
 import onlymash.flexbooru.app.Values.BOORU_TYPE_DAN1
-import onlymash.flexbooru.data.api.AppUpdaterApi
+//import onlymash.flexbooru.data.api.AppUpdaterApi
 import onlymash.flexbooru.app.Values.BOORU_TYPE_GEL
 import onlymash.flexbooru.app.Values.BOORU_TYPE_GEL_LEGACY
 import onlymash.flexbooru.app.Values.BOORU_TYPE_MOE
@@ -225,7 +225,7 @@ class MainActivity : PathActivity(), SharedPreferences.OnSharedPreferenceChangeL
             drawerSliderView.recyclerView.updatePadding(bottom = bottom)
             drawerSliderView.stickyFooterView?.updatePadding(bottom = bottom)
         }
-        checkUpdate()
+        //checkUpdate()
     }
 
     private fun setupNavigationMenu(booruType: Int) {
@@ -360,33 +360,33 @@ class MainActivity : PathActivity(), SharedPreferences.OnSharedPreferenceChangeL
         )
     }
 
-    private fun checkUpdate() {
-        GlobalScope.launch {
-            AppUpdaterApi.checkUpdate()
-        }
-        if (BuildConfig.VERSION_CODE >= latestVersionCode || isFinishing) {
-            return
-        }
-        AlertDialog.Builder(this)
-            .setTitle(R.string.update_found_update)
-            .setMessage(getString(R.string.update_version, latestVersionName))
-            .setPositiveButton(R.string.dialog_update) { _, _ ->
-                if (isGoogleSign && isAvailableOnStore) {
-                    openAppInMarket(applicationContext.packageName)
-                } else {
-                    launchUrl(latestVersionUrl)
-                }
-                finish()
-            }
-            .setNegativeButton(R.string.dialog_exit) { _, _ ->
-                finish()
-            }
-            .create().apply {
-                setCancelable(false)
-                setCanceledOnTouchOutside(false)
-                show()
-            }
-    }
+//    private fun checkUpdate() {
+//        GlobalScope.launch {
+//            AppUpdaterApi.checkUpdate()
+//        }
+//        if (BuildConfig.VERSION_CODE >= latestVersionCode || isFinishing) {
+//            return
+//        }
+//        AlertDialog.Builder(this)
+//            .setTitle(R.string.update_found_update)
+//            .setMessage(getString(R.string.update_version, latestVersionName))
+//            .setPositiveButton(R.string.dialog_update) { _, _ ->
+//                if (isGoogleSign && isAvailableOnStore) {
+//                    openAppInMarket(applicationContext.packageName)
+//                } else {
+//                    launchUrl(latestVersionUrl)
+//                }
+//                finish()
+//            }
+//            .setNegativeButton(R.string.dialog_exit) { _, _ ->
+//                finish()
+//            }
+//            .create().apply {
+//                setCancelable(true)
+//                setCanceledOnTouchOutside(true)
+//                show()
+//            }
+//    }
 
     private fun initDrawerHeader() {
         val success = isOrderSuccess

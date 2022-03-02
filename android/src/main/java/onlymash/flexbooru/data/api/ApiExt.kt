@@ -58,7 +58,7 @@ fun createHttpClient(isSankaku: Boolean): OkHttpClient {
 inline fun <reified T> createApi(): T {
     val classJava = T::class.java
     val baseUrl = when (classJava) {
-        AppUpdaterApi::class.java -> "https://raw.githubusercontent.com"
+        //AppUpdaterApi::class.java -> "https://raw.githubusercontent.com"
         OrderApi::class.java -> "https://flexbooru-pay.fiepi.com"
         else -> Values.BASE_URL
     }
