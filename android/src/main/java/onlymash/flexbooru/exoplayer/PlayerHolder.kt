@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020. by onlymash <im@fiepi.me>, All rights reserved
+ * Copyright (C) 2020. by onlymash <fiepi.dev@gmail.com>, All rights reserved
  *
  * This program is free software: you can redistribute it and/or modify it under
  * the terms of the GNU General Public License as published by the Free Software
@@ -22,7 +22,7 @@ import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.Player
 import com.google.android.exoplayer2.source.MediaSource
 import com.google.android.exoplayer2.source.ProgressiveMediaSource
-import com.google.android.exoplayer2.ui.PlayerView
+import com.google.android.exoplayer2.ui.StyledPlayerView
 import com.google.android.exoplayer2.upstream.DataSource
 import com.google.android.exoplayer2.upstream.DefaultDataSource
 import com.google.android.exoplayer2.upstream.DefaultHttpDataSource
@@ -58,7 +58,7 @@ class PlayerHolder {
     private var player: ExoPlayer? = null
 
     private fun createExtractorMediaSource(context: Context, uri: Uri): MediaSource {
-        val sourceFactory = DefaultDataSource.Factory(context, DefaultHttpDataSource.Factory().setUserAgent(PC_USER_AGENT))
+        val sourceFactory = DefaultDataSource.Factory(context, DefaultHttpDataSource.Factory().setUserAgent(PC_USER_AGENT).setAllowCrossProtocolRedirects(true))
         val cacheSourceFactory = CacheDataSource.Factory().apply {
             setCache(cache())
             setUpstreamDataSourceFactory(sourceFactory)
@@ -68,7 +68,7 @@ class PlayerHolder {
     }
 
     //start play
-    fun start(context: Context, uri: Uri, playerView: PlayerView) {
+    fun start(context: Context, uri: Uri, playerView: StyledPlayerView) {
         playerView.player = player
         val mediaSource = createExtractorMediaSource(context, uri)
         val index = playerStates.indexOfFirst { it.uri == uri }

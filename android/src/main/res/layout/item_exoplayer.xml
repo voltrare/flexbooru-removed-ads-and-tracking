@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Copyright (C) 2020. by onlymash <im@fiepi.me>, All rights reserved
+  ~ Copyright (C) 2020. by onlymash <fiepi.dev@gmail.com>, All rights reserved
   ~
   ~ This program is free software: you can redistribute it and/or modify it under
   ~ the terms of the GNU General Public License as published by the Free Software
@@ -14,11 +14,11 @@
   ~ this program. If not, see <http://www.gnu.org/licenses/>.
   -->
 
-<com.google.android.exoplayer2.ui.PlayerView
+<com.google.android.exoplayer2.ui.StyledPlayerView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/player_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:show_timeout="@integer/exoplayer_show_control_timeout_ms"
-    app:controller_layout_id="@layout/exoplayer_playback_control" />
+    app:controller_layout_id="@layout/exoplayer_controller" />

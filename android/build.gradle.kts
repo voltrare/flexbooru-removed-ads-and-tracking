@@ -20,7 +20,7 @@ import org.jetbrains.kotlin.konan.properties.Properties
 
 plugins {
     id("com.android.application")
-    id("com.google.gms.google-services")
+    //id("com.google.gms.google-services")
     //id("com.google.firebase.crashlytics")
     id("com.google.android.gms.oss-licenses-plugin")
     kotlin("android")
@@ -53,14 +53,14 @@ android {
             }
         }
     }
-    compileSdk = 31
-    buildToolsVersion = "31.0.0"
+    compileSdk = 32
+    buildToolsVersion = "32.0.0 rc1"
     defaultConfig {
         applicationId = "onlymash.flexbooru.play"
         minSdk = 21
         targetSdk = 31
         versionCode = verCode
-        versionName = "3.0.2"
+        versionName = "3.0.3"
         versionNameSuffix = ".c$verCode"
         multiDexEnabled = true
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -129,35 +129,35 @@ android {
 
 dependencies {
     val ext = rootProject.extra
-    val kodeinVersion = ext.get("kodein_version") as String
-    val coroutinesVersion = ext.get("coroutines_version") as String
-    val serializationVersion = ext.get("serialization_version") as String
-    val navVersion = ext.get("nav_version") as String
-    val roomVersion = ext.get("room_version") as String
-    val workVersion = ext.get("work_version") as String
-    val glideVersion = ext.get("glide_version") as String
-    val lifecycleVersion = ext.get("lifecycle_version") as String
-    val exoplayerVersion = ext.get("exoplayer_version") as String
-    val okhttpVersion = ext.get("okhttp_version") as String
-    val retrofitVersion = ext.get("retrofit_version") as String
-    val xmlutilVersion = ext.get("xmlutil_version") as String
+    val kodeinVersion = "7.11.0"
+    val coroutinesVersion = "1.6.0-native-mt"
+    val serializationVersion = "1.3.2"
+    val navVersion = "2.4.1"
+    val roomVersion = "2.4.2"
+    val workVersion = "2.7.1"
+    val glideVersion = "4.13.1"
+    val lifecycleVersion = "2.4.1"
+    val exoplayerVersion = "2.17.1"
+    val okhttpVersion = "5.0.0-alpha.6"
+    val retrofitVersion = "2.9.0"
+    val xmlutilVersion = "0.84.1"
 
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.1.5")
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(project(":common"))
     implementation(kotlin("stdlib-jdk8", KotlinCompilerVersion.VERSION))
-    implementation("org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.4.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.4.2")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:$serializationVersion")
     implementation("org.kodein.di:kodein-di-framework-android-core:$kodeinVersion")
     implementation("org.kodein.di:kodein-di-framework-android-x:$kodeinVersion")
-    implementation("androidx.annotation:annotation:1.4.0-alpha01")
+    implementation("androidx.annotation:annotation:1.4.0-alpha02")
     implementation("androidx.appcompat:appcompat:1.4.1")
     implementation("androidx.activity:activity-ktx:1.4.0")
     implementation("androidx.fragment:fragment-ktx:1.4.1")
     implementation("androidx.preference:preference-ktx:1.2.0")
-    implementation("androidx.core:core-ktx:1.8.0-alpha03")
+    implementation("androidx.core:core-ktx:1.9.0-alpha02")
     implementation("androidx.recyclerview:recyclerview:1.3.0-alpha01")
     implementation("androidx.viewpager2:viewpager2:1.1.0-beta01")
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01")
@@ -185,16 +185,16 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-service:$lifecycleVersion")
     // optional - ProcessLifecycleOwner provides a lifecycle for the whole application process
     implementation("androidx.lifecycle:lifecycle-process:$lifecycleVersion")
-    implementation("androidx.paging:paging-runtime-ktx:3.1.0")
+    implementation("androidx.paging:paging-runtime-ktx:3.1.1")
     implementation("androidx.work:work-runtime-ktx:$workVersion")
-    implementation("com.google.android.material:material:1.6.0-alpha02")
+    implementation("com.google.android.material:material:1.6.0-beta01")
     implementation("com.google.android:flexbox:2.0.1")
     implementation("com.google.android.apps.muzei:muzei-api:3.4.1")
     implementation("com.github.chrisbanes:PhotoView:2.3.0")
     implementation("com.github.onlymash:subsampling-scale-image-view:3.10.3")
     implementation("de.hdodenhof:circleimageview:3.1.0")
     implementation("com.github.onlymash:OMFM:1.1.4")
-    implementation("com.mikepenz:materialdrawer:9.0.0-b01")
+    implementation("com.mikepenz:materialdrawer:9.0.0-rc01")
     implementation("com.google.zxing:core:3.4.1")
     implementation("xyz.belvi.mobilevision:barcodescanner:2.0.3")
     //implementation("com.google.firebase:firebase-analytics-ktx:20.0.2")
@@ -202,7 +202,7 @@ dependencies {
     //implementation("com.google.android.gms:play-services-ads:20.5.0")
     implementation("com.google.android.gms:play-services-vision:20.1.3")
     implementation("com.google.android.gms:play-services-oss-licenses:17.0.0")
-    implementation("com.android.billingclient:billing-ktx:4.0.0")
+    implementation("com.android.billingclient:billing-ktx:4.1.0")
     implementation("com.takisoft.preferencex:preferencex-simplemenu:1.1.0")
     implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
     implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0")
@@ -220,8 +220,8 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.robolectric:robolectric:4.7.3")
     androidTestImplementation("androidx.work:work-testing:$workVersion")
-    androidTestImplementation("androidx.test:core:1.4.1-alpha03")
-    androidTestImplementation("androidx.test.ext:junit:1.1.4-alpha03")
-    androidTestImplementation("androidx.test:runner:1.4.1-alpha03")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.0-alpha03")
+    androidTestImplementation("androidx.test:core:1.4.1-alpha05")
+    androidTestImplementation("androidx.test.ext:junit:1.1.4-alpha05")
+    androidTestImplementation("androidx.test:runner:1.5.0-alpha02")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.0-alpha05")
 }
