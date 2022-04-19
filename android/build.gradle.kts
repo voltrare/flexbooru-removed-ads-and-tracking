@@ -130,9 +130,9 @@ android {
 dependencies {
     val ext = rootProject.extra
     val kodeinVersion = "7.11.0"
-    val coroutinesVersion = "1.6.0-native-mt"
+    val coroutinesVersion = "1.6.1-native-mt"
     val serializationVersion = "1.3.2"
-    val navVersion = "2.4.1"
+    val navVersion = "2.4.2"
     val roomVersion = "2.4.2"
     val workVersion = "2.7.1"
     val glideVersion = "4.13.1"
@@ -145,7 +145,7 @@ dependencies {
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.1.5")
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(project(":common"))
-    implementation(kotlin("stdlib-jdk8", KotlinCompilerVersion.VERSION))
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.20")
     implementation("org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.4.2")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion")
@@ -158,7 +158,7 @@ dependencies {
     implementation("androidx.fragment:fragment-ktx:1.4.1")
     implementation("androidx.preference:preference-ktx:1.2.0")
     implementation("androidx.core:core-ktx:1.9.0-alpha02")
-    implementation("androidx.recyclerview:recyclerview:1.3.0-alpha01")
+    implementation("androidx.recyclerview:recyclerview:1.3.0-alpha02")
     implementation("androidx.viewpager2:viewpager2:1.1.0-beta01")
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01")
     implementation("androidx.documentfile:documentfile:1.1.0-alpha01")
@@ -187,14 +187,14 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-process:$lifecycleVersion")
     implementation("androidx.paging:paging-runtime-ktx:3.1.1")
     implementation("androidx.work:work-runtime-ktx:$workVersion")
-    implementation("com.google.android.material:material:1.6.0-beta01")
+    implementation("com.google.android.material:material:1.7.0-alpha01")
     implementation("com.google.android:flexbox:2.0.1")
     implementation("com.google.android.apps.muzei:muzei-api:3.4.1")
     implementation("com.github.chrisbanes:PhotoView:2.3.0")
     implementation("com.github.onlymash:subsampling-scale-image-view:3.10.3")
     implementation("de.hdodenhof:circleimageview:3.1.0")
     implementation("com.github.onlymash:OMFM:1.1.4")
-    implementation("com.mikepenz:materialdrawer:9.0.0-rc01")
+    implementation("com.mikepenz:materialdrawer:9.0.0")
     implementation("com.google.zxing:core:3.4.1")
     implementation("xyz.belvi.mobilevision:barcodescanner:2.0.3")
     //implementation("com.google.firebase:firebase-analytics-ktx:20.0.2")

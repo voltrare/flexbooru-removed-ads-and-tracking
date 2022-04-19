@@ -63,16 +63,19 @@ class PurchaseActivity : BaseActivity() {
                 if (responseCode == BillingClient.BillingResponseCode.OK || responseCode == BillingClient.BillingResponseCode.ITEM_ALREADY_OWNED) {
                     Settings.isOrderSuccess = true
                     val index = purchases?.indexOfFirst { it.skus[0] == SKU && it.purchaseState == Purchase.PurchaseState.PURCHASED }
-                    if (index != null && index >= 0) {
-                        val purchase = purchases[index]
-                        val ackParams = AcknowledgePurchaseParams.newBuilder()
-                            .setPurchaseToken(purchase.purchaseToken)
-                            .build()
-                        billingClient?.acknowledgePurchase(ackParams){}
-                        Settings.orderId = purchase.orderId
-                        Settings.orderTime = purchase.purchaseTime
-                        Settings.orderToken = purchase.purchaseToken
-                    }
+//                    if (index != null && index >= 0) {
+//                        val purchase = purchases[index]
+//                        val ackParams = AcknowledgePurchaseParams.newBuilder()
+//                            .setPurchaseToken(purchase.purchaseToken)
+//                            .build()
+//                        billingClient?.acknowledgePurchase(ackParams){}
+//                        Settings.orderId = purchase.orderId
+//                        Settings.orderTime = purchase.purchaseTime
+//                        Settings.orderToken = purchase.purchaseToken
+//                    }
+                } else {
+                    Settings.isOrderSuccess = true
+                    val index = purchases?.indexOfFirst { it.skus[0] == SKU && it.purchaseState == Purchase.PurchaseState.PURCHASED }
                 }
             }
             billingClient = BillingClient
@@ -210,8 +213,8 @@ class PurchaseActivity : BaseActivity() {
                                         getString(R.string.purchase_pay_order_code_summit_failed),
                                         Toast.LENGTH_LONG
                                     ).show()
-                                    Settings.isOrderSuccess = false
-                                    Settings.orderId = ""
+                                    Settings.isOrderSuccess = data.activated
+                                    Settings.orderId = "yes"
                                 }
                             }
                             is NetResult.Error -> {
@@ -220,8 +223,8 @@ class PurchaseActivity : BaseActivity() {
                                     getString(R.string.purchase_pay_order_code_summit_failed),
                                     Toast.LENGTH_LONG
                                 ).show()
-                                Settings.isOrderSuccess = false
-                                Settings.orderId = ""
+                                Settings.isOrderSuccess = true
+                                Settings.orderId = "yes"
                             }
                         }
                     }
