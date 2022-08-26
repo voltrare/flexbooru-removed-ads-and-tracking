@@ -32,3 +32,14 @@ jobs:
       - store_artifacts:
           path: android/build/outputs/apk
           destination: apk
+      - run:
+          name: Run Release Build
+          command: ./gradlew assembleRelease --warning-mode all
+      - save_cache:
+          paths:
+            - ~/.gradle
+            - ~/.android/build-cache
+          key: jars-{{ checksum "build.gradle.kts" }}-{{ checksum "android/build.gradle.kts" }}
+      - store_artifacts:
+          path: android/build/outputs/apk
+          destination: apk
