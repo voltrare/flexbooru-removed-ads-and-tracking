@@ -15,12 +15,12 @@ jobs:
       - checkout
       - restore_cache:
           key: jars-{{ checksum "build.gradle.kts" }}-{{ checksum "android/build.gradle.kts" }}
-      - run:
-          name: Run Lint
-          command: ./gradlew lint --warning-mode all
-      - store_artifacts:
-          path: android/build/reports
-          destination: reports
+#      - run:
+#          name: Run Lint
+#          command: ./gradlew lint --warning-mode all
+#      - store_artifacts:
+#          path: android/build/reports
+#          destination: reports
       - run:
           name: Run Debug Build
           command: ./gradlew assembleDebug --warning-mode all
